@@ -1,3 +1,3 @@
-void createBall() {
-  ball[0] = new Ball(width/2, height/2, Ball.ballRadius);
+void createBall(int i) {
+  ball[i] = new Ball(ballX, ballY, Ball.getBallRadius());
 }

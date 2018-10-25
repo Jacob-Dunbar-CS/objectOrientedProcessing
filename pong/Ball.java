@@ -2,34 +2,40 @@ class Ball {
   private float x;
   private float y;
   private float radius;
-  
-  public static int ballCount = 1;
-  public static int ballRadius = 35;
-  
-  public int xSpeed = 3;
-  public int ySpeed = 3;
-  
+  private int xSpeedLocal = xSpeed;
+  private int ySpeedLocal = ySpeed
+
+  private static int ballCount = 2;
+  private static int ballRadius = 17;
+
+  //public int xSpeed = Math.random();
+  //public int ySpeed = Math.random();
+
   public Ball(float x, float y, float radius) {
     this.x = x;
     this.y = y;
     this.radius = radius;
   }
-  
-  void move() {
-    if (x <= width - ballRadius) {
-      x += xSpeed;
+
+  public void move() {
+
+    x += xSpeedLocal;
+    y += ySpeedLocal;
+
+    if (x <= ballRadius) {
+      xSpeedLocal *= -1;
     }
-    if (x >= width + ballRadius) {
-      x -= xSpeed;
+    if (x >= 1000 - ballRadius) {
+      xSpeedLocal *= -1;
     }
-    if (y <= height - ballRadius) {
-      y += ySpeed;
+    if (y <= ballRadius) {
+      ySpeedLocal *= -1;
     }
-    if (y >= height + ballRadius) {
-      y -= yspeed;
+    if (y >= 900 - ballRadius) {
+      ySpeedLocal *= -1;
     }
   }
-  
+
   public float getX() {
     return x;
   }
@@ -38,5 +44,11 @@ class Ball {
   }
   public float getRadius() {
     return radius;
+  }
+  public static int getBallCount() {
+    return ballCount;
+  }
+  public static int getBallRadius() {
+    return ballRadius;
   }
 }
