@@ -4,9 +4,6 @@ private Ball[] ball = new Ball[Ball.getBallCount()];
 public int ballX;
 public int ballY;
 
-public int xSpeed;
-public int ySpeed;
-
 public void setup() {
   size(1000, 900);
   screenSizeChecker();
@@ -16,8 +13,6 @@ public void setup() {
   ballY = height/2;
 
   for (int i = 0; i < ball.length; i++) {
-    xSpeed = int(floor(random(-5,5)));
-    ySpeed = int(floor(random(-5,5)));
     createBall(i);
   }
 }

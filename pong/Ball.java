@@ -2,8 +2,8 @@ class Ball {
   private float x;
   private float y;
   private float radius;
-  private int xSpeedLocal = xSpeed;
-  private int ySpeedLocal = ySpeed
+  private int xSpeed;
+  private int ySpeed;
 
   private static int ballCount = 2;
   private static int ballRadius = 17;
@@ -18,9 +18,9 @@ class Ball {
   }
 
   public void move() {
-
-    x += xSpeedLocal;
-    y += ySpeedLocal;
+    
+    x += xSpeed;
+    y += ySpeed;
 
     if (x <= ballRadius) {
       xSpeedLocal *= -1;
