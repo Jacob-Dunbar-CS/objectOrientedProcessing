@@ -1,3 +1,17 @@
-void createBall(int i) {
-  ball[i] = new Ball(ballX, ballY, Ball.getBallRadius());
+void createBall() {
+   int xSpeed;
+   int ySpeed;
+  for (int i = 0; i < ball.length; i++) {
+    int ballX = width/2;
+    int ballY = height/2;
+    xSpeed = int(random(-6, 6));
+    ySpeed = int(random(-6, 6));
+    while (xSpeed > -3 && xSpeed < 3) {
+      xSpeed = int(random(-6, 6));
+    }
+    while (ySpeed > -3 && ySpeed < 3) {
+      ySpeed = int(random(-6, 6));
+    }
+    ball[i] = new Ball(ballX, ballY, Ball.getBallRadius(), xSpeed, ySpeed);
+  }
 }

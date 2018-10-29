@@ -1,3 +1,4 @@
+private Boolean mouseStart = false;
 private Boolean start = false;
 private Star[] stars = new Star[Star.getStarCount()];
 
@@ -7,31 +8,37 @@ public void setup() {
   ellipseMode(RADIUS);
 
   createStars();
+  for (int i = 0; i < stars.length; i++) {
+    stars[i].targetX = int(random(width));
+    stars[i].targetY = int(random(height));
+  }
 }
 
 public void draw() {
+  if (mousePressed == true) {
+    mouseStart = true;
+  }
+
+  if (mouseStart == true) {
+    background(0);
+  }
   startStop();
 
   if (start == true) {
-
-    for (int i = 0; i < stars.length; i++) {
-      stars[i].step();
-    }
-
     background(0);
-
     for (int i =0; i < stars.length; i++) {
+      stars[i].step();
       ellipse(stars[i].getX(), stars[i].getY(), stars[i].getRadius(), stars[i].getRadius());
     }
   }
 }
 
 public void mouseClicked() {
-  createStars();
-  //if (start == true) {
+  if (start ==true) {
+    createStars();
     for (int i = 0; i < stars.length; i++) {
-      stars[i].targetX = mouseX;
-      stars[i].targetY = mouseY;
-    //}
+    stars[i].targetX = int(random(width));
+    stars[i].targetY = int(random(height));
+    }
   }
 }

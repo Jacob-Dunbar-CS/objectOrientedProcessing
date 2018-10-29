@@ -2,8 +2,8 @@ class Ball {
   private float x;
   private float y;
   private float radius;
-  private int xSpeed;
-  private int ySpeed;
+  public int xSpeed;
+  public int ySpeed;
 
   private static int ballCount = 2;
   private static int ballRadius = 17;
@@ -11,10 +11,12 @@ class Ball {
   //public int xSpeed = Math.random();
   //public int ySpeed = Math.random();
 
-  public Ball(float x, float y, float radius) {
+  public Ball(float x, float y, float radius, int xSpeed, int ySpeed) {
     this.x = x;
     this.y = y;
     this.radius = radius;
+    this.xSpeed = xSpeed;
+    this.ySpeed = ySpeed;
   }
 
   public void move() {
@@ -23,16 +25,16 @@ class Ball {
     y += ySpeed;
 
     if (x <= ballRadius) {
-      xSpeedLocal *= -1;
+      xSpeed *= -1;
     }
     if (x >= 1000 - ballRadius) {
-      xSpeedLocal *= -1;
+      xSpeed *= -1;
     }
     if (y <= ballRadius) {
-      ySpeedLocal *= -1;
+      ySpeed *= -1;
     }
     if (y >= 900 - ballRadius) {
-      ySpeedLocal *= -1;
+      ySpeed *= -1;
     }
   }
 
