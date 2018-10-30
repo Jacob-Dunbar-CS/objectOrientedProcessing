@@ -2,16 +2,16 @@ class Ball {
   private float x;
   private float y;
   private float radius;
-  public int xSpeed;
-  public int ySpeed;
+  public float xSpeed;
+  public float ySpeed;
 
   private static int ballCount = 2;
-  private static int ballRadius = 17;
+  private static int ballRadius = 20;
 
   //public int xSpeed = Math.random();
   //public int ySpeed = Math.random();
 
-  public Ball(float x, float y, float radius, int xSpeed, int ySpeed) {
+  public Ball(float x, float y, float radius, float xSpeed, float ySpeed) {
     this.x = x;
     this.y = y;
     this.radius = radius;
