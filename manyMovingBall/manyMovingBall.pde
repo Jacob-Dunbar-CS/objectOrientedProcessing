@@ -37,8 +37,16 @@ public void mouseClicked() {
   if (start ==true) {
     createStars();
     for (int i = 0; i < stars.length; i++) {
-    stars[i].targetX = int(random(width));
-    stars[i].targetY = int(random(height));
+      int randWidth = int(random(width));
+      int randHeight = int(random(height));
+      while (randWidth < 10 || randWidth > width - 10) {
+        randWidth = int(random(width));
+      }
+      while (randHeight < 10 || randHeight > height - 10) {
+        randHeight = int(random(height));
+      }
+      stars[i].targetX = randWidth;
+      stars[i].targetY = randHeight;
     }
   }
 }
