@@ -5,7 +5,7 @@ class Ball {
   public float xSpeed;
   public float ySpeed;
 
-  private static int ballCount = 3;
+  private static int ballCount = 2;
   private static int ballRadius = 15;
 
   //public int xSpeed = Math.random();
