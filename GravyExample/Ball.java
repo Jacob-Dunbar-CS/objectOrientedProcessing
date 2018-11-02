@@ -10,14 +10,14 @@ class Ball {
   private static float ballCount = 50;
   private static float maxRadius = 5;
   
-  public Ball(float x, float y, color c, float radius, float xSpeed, float ySpeed, float gravity) {
+  public Ball(float x, float y) {
     this.x = x;
     this.y = y;
-    this.c = c;
-    this.radius = radius;
-    this.xSpeed = xSpeed;
-    this.ySpeed = ySpeed;
-    this.gravity = gravity;
+    this.c = color(int(random(255)),int(random(255)),int(random(255)));
+    this.radius = random(maxRadius);
+    this.xSpeed = random(-6,6);
+    this.ySpeed = random(-6,6);
+    this.gravity = 0.5;
   }
   
   public float getX() {
