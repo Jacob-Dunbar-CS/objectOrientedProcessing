@@ -8,15 +8,15 @@ class Ball {
   float gravity;
   
   float maxRadius = 20;
-  float ballCount = 20;
+   int ballCount = 20;
 
   public Ball(float width, float height) {
-    this.x = random(width);
-    this.y = random(height);
+    this.x = mouseX;//random(width);
+    this.y = mouseY; //random(height);
     this.c = color(int(random(255)), int(random(255)), int(random(255)));
     this.radius = random(maxRadius);
-    this.xSpeed = random(-6, 6);
-    this.ySpeed = random(-6, 6);
+    this.xSpeed = random(-10, 10);
+    this.ySpeed = random(-20, 10);
     this.gravity = 0.5;
   }
 
@@ -47,11 +47,5 @@ class Ball {
   }
   public float getRadius() {
     return radius;
-  }
-  public float getBallCount() {
-    return  ballCount;
-  }
-  public float getMaxRadius() {
-    return maxRadius;
   }
 }
