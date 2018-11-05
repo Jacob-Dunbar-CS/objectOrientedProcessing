@@ -1,11 +1,14 @@
-brivate Ball ball = new Ball[Ball.getBallCount()];
+Ball ball;
 
 void setup() {
-  size (900, 100);
-  bacground(0);
+  size (900, 1000);
+  background(0);
   ellipseMode(RADIUS);
+  ball = new Ball(width, height);
 }
 
-void draw{
-  
+void draw() {
+  background(255);
+  ball.display();
+  ball.step();
 }
