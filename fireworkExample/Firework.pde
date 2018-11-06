@@ -6,9 +6,8 @@ class Firework {
   private float xSpeed;
   private float ySpeed;
   private float gravity;
-
-  private static float fireworkCount = 16;
-  private static float maxRadius = 10;
+  
+  private  float maxRadius = 10;
 
   public Firework() {
     this.x = mouseX;
@@ -40,8 +39,8 @@ class Firework {
   public float getRad() {
     return radius;
   }
-  public float getCount() {
-    return fireworkCount;
+  public float getGravity() {
+    return gravity;
   }
   public float getMaxRadius() {
     return maxRadius;

@@ -1,13 +1,13 @@
-class Paddle {
+class rightPaddle {
   private float x;
   private float y;
   private float paddleWidth;
   private float paddleHeight;
   private float speed;
 
-  private static int paddleCount = 2;
+  private static int paddleCount = 1;
 
-  public Paddle(float x, float y, float paddleWidth, float paddleHeight, float speed) {
+  public rightPaddle(float x, float y, float paddleWidth, float paddleHeight, float speed) {
     this.x = x;
     this.y = y;
     this.paddleWidth = paddleWidth;

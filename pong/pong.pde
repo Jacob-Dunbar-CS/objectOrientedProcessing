@@ -1,6 +1,7 @@
 private Boolean start = false;
 private Ball[] ball = new Ball[Ball.getBallCount()];
-private Paddle[] paddle = new Paddle[Paddle.getPaddleCount()];
+private leftPaddle[] left = new leftPaddle[leftPaddle.getPaddleCount()];
+private rightPaddle[] right = new rightPaddle[rightPaddle.getPaddleCount()];
 
 
 public void setup() {
@@ -21,8 +22,9 @@ public void draw() {
       ball[i].move();
       ellipse(ball[i].getX(), ball[i].getY(), ball[i].getRadius(), ball[i].getRadius());
     }
-    for (int i = 0; i <paddle.length; i++) {
-      rect(paddle[i].getX(), paddle[i].getY(), paddle[i].getWidth(), paddle[i].getHeight());
+    for (int i = 0; i <left.length; i++) {
+      rect(left[i].getX(), left[i].getY(), left[i].getWidth(), left[i].getHeight());
+      rect(right[i].getX(), right[i].getY(), right[i].getWidth(), right[i].getHeight());
     }
   }
 }
