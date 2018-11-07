@@ -7,6 +7,8 @@ class Ball {
 
   private static int ballCount = 2;
   private static int ballRadius = 15;
+  
+  public static boolean [] keys = new boolean [4];
 
   //public int xSpeed = Math.random();
   //public int ySpeed = Math.random();
@@ -35,6 +37,13 @@ class Ball {
     }
     if (y >= 900 - ballRadius) {
       ySpeed *= -1;
+    }
+    
+    if (x + radius >= leftPaddle.getX() && x - radius <= leftPaddle.getX() + leftPaddle.getWidth() && y +radius >= leftPaddle.getY() && y + radius <= leftPaddle.getY() + leftPaddle.getHeight()) {
+      xSpeed *= -1;
+    }
+    if (x + radius >= rightPaddle.getX() && x - radius <= rightPaddle.getX() + rightPaddle.getWidth() && y +radius >= rightPaddle.getY() && y +radius <= rightPaddle.getY() + rightPaddle.getHeight()) {
+      xSpeed *= -1;
     }
   }
 
