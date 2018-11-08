@@ -21,6 +21,13 @@ class leftPaddle {
     } else if (Ball.keys[1] == true) {
       y += speed;
     }
+
+    if (y <= 0) {
+      y = 0;
+    }
+    if (y + paddleHeight >= 900) {
+      y = 900 - paddleHeight;
+    }
   }
 
   public static float getX() {

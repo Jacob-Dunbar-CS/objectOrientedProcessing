@@ -2,6 +2,7 @@ private Boolean start = false;
 private Ball[] ball = new Ball[Ball.getBallCount()];
 public leftPaddle[] left = new leftPaddle[leftPaddle.getPaddleCount()];
 public rightPaddle[] right = new rightPaddle[rightPaddle.getPaddleCount()];
+public Score[] score = new Score[2];
 
 
 public void setup() {
@@ -11,6 +12,9 @@ public void setup() {
 
   createBall();
   createPaddle();
+  for (int i = 0; i < Score.length; i++) {
+    score[i] = new Score(0);
+  }
 }
 
 public void draw() {
@@ -25,6 +29,7 @@ public void draw() {
     for (int i = 0; i <left.length; i++) {
       //println(Ball.keys[0]);
       left[i].paddleMove();
+      right[i].paddleMove();
       rect(left[i].getX(), left[i].getY(), left[i].getWidth(), left[i].getHeight());
       rect(right[i].getX(), right[i].getY(), right[i].getWidth(), right[i].getHeight());
     }
@@ -38,14 +43,11 @@ public void keyPressed() {
   if (key == 's' || key == 'S') {
     Ball.keys[1] = true;
   }
-
-  if (key == CODED) {
-    if (keyCode == DOWN) {
-      Ball.keys[3] = true;
-    }
-    if (keyCode == UP) {
-   w   Ball.keys[2] = true;
-    }
+  if (keyCode == UP) {
+    Ball.keys[2] = true;
+  }
+  if (keyCode == DOWN) {
+    Ball.keys[3] = true;
   }
 }
 public void keyReleased() {

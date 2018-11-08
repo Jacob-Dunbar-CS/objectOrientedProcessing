@@ -1,5 +1,5 @@
 void createPaddle() {
-  float speed = 3;
+  float speed = 5;
   float paddle1X = width/8;
   float paddle1Y = height * 7/16;
   float paddleWidth = width/64;
