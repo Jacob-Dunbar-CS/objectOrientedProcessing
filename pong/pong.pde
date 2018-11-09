@@ -2,7 +2,7 @@ private Boolean start = false;
 private Ball[] ball = new Ball[Ball.getBallCount()];
 public leftPaddle[] left = new leftPaddle[leftPaddle.getPaddleCount()];
 public rightPaddle[] right = new rightPaddle[rightPaddle.getPaddleCount()];
-public Score[] score = new Score[2];
+public Score [] score = new Score [1];
 
 
 public void setup() {
@@ -12,8 +12,8 @@ public void setup() {
 
   createBall();
   createPaddle();
-  for (int i = 0; i < Score.length; i++) {
-    score[i] = new Score(0);
+  for (int i = 0; i < 1; i++) {
+    score[i] = new Score();
   }
 }
 
@@ -21,12 +21,14 @@ public void draw() {
   startStop();
 
   if (start == true) {
+    //score.scoreBoard();
     background(146);
     for (int i = 0; i < ball.length; i ++) {
       ball[i].move();
       ellipse(ball[i].getX(), ball[i].getY(), ball[i].getRadius(), ball[i].getRadius());
     }
-    for (int i = 0; i <left.length; i++) {
+    for (int i = 0; i < left.length; i++) {
+      score[i].scoreBoard();
       //println(Ball.keys[0]);
       left[i].paddleMove();
       right[i].paddleMove();
