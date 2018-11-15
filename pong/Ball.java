@@ -54,13 +54,14 @@ class Ball {
       x = 500;
       y = 450;
     }
-    rightScore = 0;
+    //rightScore = 0;
 
     if (x - radius > rightPaddle.getX() + rightPaddle.getWidth()) {
       leftScore = 1;
       x = 500;
       y = 450;
     }
+    rightScore = 0;
     leftScore = 0;
   }
 
