@@ -9,9 +9,6 @@ class Ball {
   private static int ballRadius = 15;
 
   public static boolean [] keys = new boolean [4];
-  public static int leftScore = 1;
-  public static int rightScore = 1;
-
 
   //public int xSpeed = Math.random();
   //public int ySpeed = Math.random();
@@ -50,6 +47,7 @@ class Ball {
     }
 
     if (x + radius < leftPaddle.getX()) {
+
       x = 500;
       y = 450;
     }
