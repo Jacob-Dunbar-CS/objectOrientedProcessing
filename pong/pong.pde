@@ -3,7 +3,7 @@ private Ball[] ball = new Ball[Ball.getBallCount()];
 public leftPaddle[] left = new leftPaddle[leftPaddle.getPaddleCount()];
 public rightPaddle[] right = new rightPaddle[rightPaddle.getPaddleCount()];
 public Score [] score = new Score [1];
-
+public Firework [] firework = new Firework [20]
 
 public void setup() {
   size(1000, 900);
@@ -14,6 +14,7 @@ public void setup() {
   createPaddle();
   for (int i = 0; i < 1; i++) {
     score[i] = new Score();
+    firework[i] = new Firework(width, height);
   }
 }
 
