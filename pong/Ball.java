@@ -10,6 +10,9 @@ class Ball {
 
   public static boolean [] keys = new boolean [4];
 
+  //public int [] scoreNum = new int [2];
+  public static boolean [] scoreCheck = new boolean [2];
+
   //public int xSpeed = Math.random();
   //public int ySpeed = Math.random();
 
@@ -47,15 +50,25 @@ class Ball {
     }
 
     if (x + radius < leftPaddle.getX()) {
-
       x = 500;
       y = 450;
-    }
-
-    if (x - radius > rightPaddle.getX() + rightPaddle.getWidth()) {
+      pong.scoreNum[1]++;
+      scoreBoard();
+    } else if (x - radius > rightPaddle.getX() + rightPaddle.getWidth()) {
       x = 500;
       y = 450;
+      pong.scoreNum[0]++;
+      scoreBoard();
+    } else {
+      scoreCheck[0] = false;
+      scoreCheck[1] = false;
     }
+  }
+
+
+  public void scoreBoard() {
+      System.out.println("Player One:" + pong.scoreNum[0]);
+      System.out.println("Player Two:" + pong.scoreNum[1]);
   }
 
   public float getX() {
