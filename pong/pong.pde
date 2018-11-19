@@ -7,11 +7,17 @@ public Firework [] firework = new Firework [20];
 
 public static int [] scoreNum = new int [2];
 
+public PFont font;
+
 public void setup() {
   size(1000, 900);
   screenSizeChecker();
   ellipseMode(RADIUS);
 
+
+  font = createFont("Times New Roman", 16);
+  textFont(font, 36);
+  
   createBall();
   createPaddle();
   for (int i = 0; i < 1; i++) {
@@ -48,6 +54,8 @@ public void draw() {
       rect(left[i].getX(), left[i].getY(), left[i].getWidth(), left[i].getHeight());
       rect(right[i].getX(), right[i].getY(), right[i].getWidth(), right[i].getHeight());
     }
+    text(scoreNum[0], 100, 100);
+    text(scoreNum[1], 890, 100);
   }
 }
 

@@ -52,11 +52,13 @@ class Ball {
     if (x + radius < leftPaddle.getX()) {
       x = 500;
       y = 450;
+      xSpeed *= -1;
       pong.scoreNum[1]++;
       scoreBoard();
     } else if (x - radius > rightPaddle.getX() + rightPaddle.getWidth()) {
       x = 500;
       y = 450;
+      xSpeed *= -1;
       pong.scoreNum[0]++;
       scoreBoard();
     } else {
