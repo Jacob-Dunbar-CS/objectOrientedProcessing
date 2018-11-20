@@ -10,11 +10,7 @@ class Ball {
 
   public static boolean [] keys = new boolean [4];
 
-  //public int [] scoreNum = new int [2];
   public static boolean [] scoreCheck = new boolean [2];
-
-  //public int xSpeed = Math.random();
-  //public int ySpeed = Math.random();
 
   public Ball(float x, float y, float radius, float xSpeed, float ySpeed) {
     this.x = x;

@@ -2,7 +2,6 @@ private Boolean start = false;
 private Ball[] ball = new Ball[Ball.getBallCount()];
 public leftPaddle[] left = new leftPaddle[leftPaddle.getPaddleCount()];
 public rightPaddle[] right = new rightPaddle[rightPaddle.getPaddleCount()];
-//public Score [] score = new Score [1];
 public Firework [] firework = new Firework [20];
 
 public static int [] scoreNum = new int [2];
@@ -20,10 +19,6 @@ public void setup() {
   
   createBall();
   createPaddle();
-  for (int i = 0; i < 1; i++) {
-    //score[i] = new Score();
-    //firework[i] = new Firework(-10000, -10000);
-  }
   for (int i =0; i < firework.length; i++) {
     firework[i] = new Firework(-10000, -10000);
   }
@@ -33,7 +28,6 @@ public void draw() {
   startStop();
 
   if (start == true) {
-    //score.scoreBoard();
     background(146);
     for (int i = 0; i < firework.length; i++) {
       firework[i].display();
@@ -41,14 +35,12 @@ public void draw() {
     }
     fill(255, 0, 0);
     for (int i = 0; i < ball.length; i ++) {
-      //fill(255);
       ball[i].move();
       ellipse(ball[i].getX(), ball[i].getY(), ball[i].getRadius(), ball[i].getRadius());
       fill(0, 255, 0);
     }
     for (int i = 0; i < left.length; i++) {
       fill(255);
-      //println(Ball.keys[0]);
       left[i].paddleMove();
       right[i].paddleMove();
       rect(left[i].getX(), left[i].getY(), left[i].getWidth(), left[i].getHeight());

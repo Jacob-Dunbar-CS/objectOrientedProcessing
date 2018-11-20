@@ -11,8 +11,8 @@ class Firework {
   int ballCount = 10;
 
   public Firework(float x, float y) {
-    this.x = x;//random(width);
-    this.y = y; //random(height);
+    this.x = x;
+    this.y = y;
     this.c = color(int(random(255)), int(random(255)), int(random(255)));
     this.radius = random(maxRadius);
     this.xSpeed = random(-5, 5);
