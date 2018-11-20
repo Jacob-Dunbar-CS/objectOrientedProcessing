@@ -10,8 +10,6 @@ class Ball {
 
   public static boolean [] keys = new boolean [4];
 
-  public static boolean [] scoreCheck = new boolean [2];
-
   public Ball(float x, float y, float radius, float xSpeed, float ySpeed) {
     this.x = x;
     this.y = y;
@@ -57,12 +55,8 @@ class Ball {
       xSpeed *= -1;
       pong.scoreNum[0]++;
       scoreBoard();
-    } else {
-      scoreCheck[0] = false;
-      scoreCheck[1] = false;
     }
   }
-
 
   public void scoreBoard() {
       System.out.println("Player One:" + pong.scoreNum[0]);
